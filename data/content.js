@@ -1,6 +1,6 @@
 module.exports = {
   hero: {
-    content: 'Lorem ipsum dolor sit amet.',
+    content: 'responsive multi purpose theme',
   },
 
   footer: {
