@@ -1,0 +1,61 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  @include breakpoint('m') {
+    font-size: 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  &:visited {
+    color: inherit;
+  }
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+}
+h1 {
+  font-size: 2rem;
+  @include breakpoint('xs') {
+    font-size: 2.2rem;
+  }
+  @include breakpoint('s') {
+    font-size: 2.5rem;
+  }
+  @include breakpoint('m') {
+    font-size: 2.7rem;
+  }
+  @include breakpoint('l') {
+    font-size: 3rem;
+  }
+  @include breakpoint('xl') {
+    font-size: 3.5rem;
+  }
+}
