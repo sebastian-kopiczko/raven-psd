@@ -1,2 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 @import './utils/variables';
+
+@import './base/base';
+
+@import './components/button';
 @import './components/hero';
+
+@import './layout/header';
+@import './layout/layout';
+
+@import './pages/home';
+
+// @import './vendor/';
