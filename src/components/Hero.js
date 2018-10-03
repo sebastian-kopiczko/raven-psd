@@ -1,6 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
+import Button from './Button'
+
 export default () => (
   <StaticQuery
     query={graphql`
@@ -8,6 +10,9 @@ export default () => (
         site {
           siteMetadata {
             siteTitle
+            hero {
+              content
+            }
           }
         }
       }
@@ -16,9 +21,10 @@ export default () => (
       <section id="hero" className="hero">
         <h1 className="hero__heading">
           Welcome to&nbsp;
-          {/* {data.site.siteMetadata.siteTitle} */}
+          {data.site.siteMetadata.siteTitle}
         </h1>
-        <p className="content" />
+        <p className="content">{data.site.siteMetadata.hero.content}</p>
+        <Button buttonText="read more" />
       </section>
     )}
   />
