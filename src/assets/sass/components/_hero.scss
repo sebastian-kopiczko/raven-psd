@@ -1,3 +1,46 @@
+@import '../utils/variables';
+@import '../utils/mixins';
 .hero {
-  background-image: url('../images/bg-home.png');
+  height: 65vh;
+  max-height: 1200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+  color: #fff;
+  z-index: 1;
+  background: {
+    image: url('../images/bg-home.png');
+    position: 32% 0;
+    size: cover;
+  }
+  @include breakpoint('s') {
+    height: 80vh;
+    padding-top: 6em;
+  }
+  @include breakpoint('m') {
+    height: 100vh;
+  }
+  @include breakpoint('s') {
+    // height: 80vh;
+  }
+  &__heading {
+    margin-bottom: 0.25em;
+  }
+  &__content {
+    margin-top: 0;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 }

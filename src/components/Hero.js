@@ -19,11 +19,13 @@ export default () => (
     `}
     render={data => (
       <section id="hero" className="hero">
-        <h1 className="hero__heading">
+        <h1 className="hero__heading text-uppercase text-center">
           Welcome to&nbsp;
           {data.site.siteMetadata.siteTitle}
         </h1>
-        <p className="content">{data.site.siteMetadata.hero.content}</p>
+        <p className="hero__content content">
+          {data.site.siteMetadata.hero.content}
+        </p>
         <Button buttonText="read more" />
       </section>
     )}
