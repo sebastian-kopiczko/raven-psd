@@ -1,0 +1,142 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.services {
+  &__heading {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -0.5em;
+      left: calc(50% - 2rem);
+      width: 4rem;
+      height: 1px;
+      border-top: 2px solid $purple-light;
+    }
+  }
+  &__content {
+    margin: 1.8em 0;
+    @include breakpoint('s') {
+      text-align: center;
+      max-width: 49em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include breakpoint('m') {
+      margin-bottom: 2.2em;
+    }
+    @include breakpoint('l') {
+      margin-bottom: 2.5em;
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    flex: 2;
+  }
+  &__list {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    @include breakpoint('s') {
+      max-width: 43em;
+      justify-content: space-between;
+    }
+    @include breakpoint('m') {
+      position: relative;
+      bottom: -0.75em;
+    }
+  }
+  &__item {
+    display: flex;
+    flex: 0 0 29%;
+    padding: 5em 0.5em 1.7em 0.5em;
+    margin: 0.7em 0.5em;
+    text-align: center;
+    line-height: 1.15;
+    font-size: 0.8rem;
+    border-color: $grey-light;
+    @include breakpoint('xs') {
+      padding: 6.5em 1em 2em 1em;
+      font-size: 0.9rem;
+    }
+    @include breakpoint('s') {
+      flex: 0 0 22%;
+      padding: 6em 0.5em 2em 0.5em;
+      font-size: 1rem;
+    }
+    @include breakpoint('m') {
+      padding: 7.5em 1em 2em 1em;
+    }
+    @include breakpoint('l') {
+      padding: 9em 1.5em 2.5em 1.5em;
+      margin-bottom: 1em;
+    }
+    span {
+      word-break: break-word;
+    }
+    &:after {
+      background-size: 20%;
+      @include breakpoint('xs') {
+        background-size: 25%;
+      }
+      @include breakpoint('m') {
+        background-size: 30%;
+      }
+    }
+    &--pulse {
+      @include service-icon('pulse');
+    }
+    &--compass {
+      @include service-icon('compass');
+      @include breakpoint('xs') {
+        &:after {
+          background-size: 21%;
+        }
+      }
+    }
+    &--shield {
+      @include service-icon('shield');
+    }
+    &--truck {
+      @include service-icon('truck');
+    }
+    &--vehicle {
+      @include service-icon('vehicle');
+    }
+    &--box {
+      @include service-icon('box');
+    }
+    &--cd {
+      @include service-icon('cd');
+    }
+    &--syringe {
+      @include service-icon('syringe');
+    }
+  }
+  &__photo {
+    display: none;
+    flex: 1;
+    img {
+      width: auto;
+    }
+    @include breakpoint('m') {
+      position: relative;
+      left: -0.5em;
+      display: flex;
+      width: 18em;
+      align-items: flex-end;
+    }
+  }
+  .row {
+    @include breakpoint('m') {
+      display: flex;
+      align-items: stretch;
+      flex-direction: row-reverse;
+    }
+  }
+}

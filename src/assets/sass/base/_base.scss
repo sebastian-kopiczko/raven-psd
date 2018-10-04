@@ -15,7 +15,10 @@ body {
   margin: 0;
   min-height: 100%;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
+  @include breakpoint('s') {
+    font-size: 18px;
+  }
   @include breakpoint('m') {
     font-size: 20px;
   }
@@ -29,6 +32,12 @@ a {
   }
 }
 
+p {
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -36,10 +45,13 @@ a {
 .text-center {
   text-align: center;
 }
-
+.center {
+  margin: 0 auto;
+}
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 1185px;
+  margin: 0 auto;
 }
 h1 {
   font-size: 2rem;
@@ -58,4 +70,35 @@ h1 {
   @include breakpoint('xl') {
     font-size: 3.5rem;
   }
+}
+
+.section {
+  padding: 0 1.3em;
+  @include breakpoint('xs') {
+    padding: 1em 1.5em;
+  }
+  @include breakpoint('s') {
+    padding: 2em 3em;
+  }
+  @include breakpoint('m') {
+    padding: 2.5em 3em;
+  }
+  @include breakpoint('l') {
+    padding: 4em 3.2em;
+  }
+  @include breakpoint('xl') {
+    padding: 4.3em 3.2em;
+  }
+}
+
+.card {
+  list-style: none;
+  display: inline-flex;
+  // padding: 4em;
+  background: #ddd;
+  /* Style for "Rectangle" */
+
+  border-radius: 3px;
+  border: 1px solid $grey-light;
+  background-color: #fff;
 }
