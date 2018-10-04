@@ -35,6 +35,7 @@ module.exports = {
       },
     ],
     hero: config.hero,
+    services: config.services,
     footer: config.footer,
   },
   plugins: [
