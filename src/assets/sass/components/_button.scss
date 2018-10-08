@@ -1,11 +1,19 @@
+@import '../utils/variables';
 .button {
-  display: inline-flex;
+  display: flex;
   align-items: flex-end;
   padding: 0.8em 2.7em;
   border-radius: 3px;
-  border: 1px solid #ffffff;
+  border: 1px solid;
   background: none;
-  color: #fff;
   text-transform: uppercase;
   margin-top: 0.5em;
+  &--white {
+    color: $white;
+    border-color: $white;
+  }
+  &--purple {
+    color: $purple-light;
+    border-color: $purple-light;
+  }
 }
