@@ -21,10 +21,7 @@ export default () => (
       <ul className="services__list">
         {data.site.siteMetadata.services.map((li, index) => {
           return (
-            <li
-              key={index}
-              className={`services__item services__item--${li.icon} card`}
-            >
+            <li key={index} className={`services__item icon--${li.icon} card`}>
               <span className="card__content text-uppercase center">
                 {li.content}
               </span>
