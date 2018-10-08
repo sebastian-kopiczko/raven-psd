@@ -14,28 +14,25 @@ module.exports = {
     ],
     socialNav: [
       {
-        name: 'facebook',
+        icon: 'facebook',
         url: 'https://www.gatsbyjs.org/',
-        icon: 'fa fa-facebook',
       },
       {
-        name: 'twitter',
+        icon: 'twitter',
         url: 'https://www.gatsbyjs.org/',
-        icon: 'fa fa-twitter',
       },
       {
-        name: 'gplus',
+        icon: 'google',
         url: 'https://www.gatsbyjs.org/',
-        icon: 'fa fa-google-plus-square',
       },
       {
-        name: 'youtube',
+        icon: 'youtube',
         url: 'https://www.gatsbyjs.org/',
-        icon: 'fa fa-youtube-play',
       },
     ],
     hero: config.hero,
     services: config.services,
+    testimonials: config.testimonials,
     footer: config.footer,
   },
   plugins: [
@@ -49,7 +46,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/assets/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/assets/images/favicon.png',
       },
     },
     {
@@ -60,5 +57,14 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     'gatsby-plugin-offline',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`, // you can use multiple source-filesystem instances
+        path: `${__dirname}/src/assets/images/projects`,
+      },
+    },
   ],
 }
