@@ -6,7 +6,9 @@ import Layout from '../components/Layout'
 // import Hero from '../components/Hero'
 import Button from '../components/Button'
 import Services from '../components/Services'
+import Projects from '../components/Projects'
 // import Section from '../components/Section'
+import Carousel from 'nuka-carousel'
 
 import servicesPhoto from '../assets/images/home-man.png'
 
@@ -18,6 +20,14 @@ export default () => (
           siteMetadata {
             siteTitle
             hero {
+              content
+            }
+            services {
+              content
+              icon
+            }
+            testimonials {
+              name
               content
             }
           }
@@ -34,11 +44,11 @@ export default () => (
           <p className="hero__content content">
             {data.site.siteMetadata.hero.content}
           </p>
-          <Button buttonText="read more" />
+          <Button buttonText="read more" color="white" centered={true} />
         </section>
         <section id="services" className="services section">
           <div className="container">
-            <h2 className="services__heading heading text-uppercase text-center">
+            <h2 className="services__heading section__heading text-uppercase text-center">
               Our services
             </h2>
             <p className="services__content content">
@@ -47,13 +57,41 @@ export default () => (
             </p>
             <div className="row">
               <div className="services__container">
-                <Services />
+                <Services services={data.site.siteMetadata.services} />
               </div>
               <div className="services__photo">
                 <img src={servicesPhoto} alt="" />
               </div>
             </div>
           </div>
+        </section>
+        <section id="projects" className="projects section">
+          <h2 className="projects__heading section__heading text-uppercase text-center">
+            Our projects
+          </h2>
+          <Projects />
+          <Button buttonText="browse more" color="purple" centered={true} />
+        </section>
+        <section id="testimonials" className="testimonials section">
+          <h2 className="testimonials__heading section__heading text-uppercase text-center">
+            Testmionials
+          </h2>
+          <Carousel withoutControls={false} autoplay={true}>
+            {data.site.siteMetadata.testimonials.map((item, index) => {
+              return (
+                <div key={index} className={`testimonials__item`}>
+                  <img
+                    className="testimonials__img center"
+                    src="https://via.placeholder.com/120x70"
+                    alt=""
+                  />
+                  <p className={`testimonials__content content`}>
+                    {item.content}
+                  </p>
+                </div>
+              )
+            })}
+          </Carousel>
         </section>
         {/* <Services /> */}
         {/* <Projects /> */}
