@@ -1,3 +1,4 @@
+@import './variables';
 @mixin breakpoint($breakpoint, $direction: $media-direction) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media (#{$direction}-width: #{map-get($breakpoints, $breakpoint)}) {
@@ -11,20 +12,58 @@
   }
 }
 
-@mixin service-icon($icon) {
-  position: relative;
-  &:after {
+// @mixin icon($iconName) {
+//   position: relative;
+//   &:after {
+//     content: '';
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background-color: #fff;
+//     -webkit-mask-image: url('../images/svg/icon'+$iconName+'.svg');
+//     mask-image: url('../images/svg/icon'+$iconName+'.svg');
+//     background: {
+//       image: url('../images/svg/icon-'+$iconName+'.svg');
+//       repeat: no-repeat;
+//       position: center 36%;
+//     }
+//   }
+// }
+@mixin image-hover-background($color, $opacity) {
+  &:before {
     content: '';
+    position: absolute;
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0;
     left: 0;
-    background: {
-      image: url('../images/services/'+$icon+'.svg');
+    background-color: $color;
+    z-index: 1;
+    opacity: $opacity;
+  }
+}
+@mixin icon($iconName, $color, $width, $height) {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    // height: calc(#{$a} + 7px);
+    top: calc(50% - (#{$height} / 2));
+    left: calc(50% - (#{$width} / 2));
+    background-color: $color;
+    -webkit-mask-image: url('../images/svg/icon-'+$iconName+'.svg');
+    mask: {
+      image: url('../images/svg/icon-'+$iconName+'.svg');
+      size: 2em;
       repeat: no-repeat;
-      position: center 36%;
     }
+
+    z-index: 2;
   }
 }

@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  background: $black-dark;
+  color: $white;
+  padding: 1em;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__copyright {
+    width: 100%;
+    text-align: center;
+  }
+  &__navigation {
+    padding: 0;
+    display: flex;
+    width: 100%;
+    &-item {
+      list-style: none;
+      flex: 1;
+      height: 3em;
+    }
+  }
+}
