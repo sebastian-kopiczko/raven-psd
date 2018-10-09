@@ -12,58 +12,41 @@
   }
 }
 
-// @mixin icon($iconName) {
-//   position: relative;
-//   &:after {
-//     content: '';
-//     display: block;
-//     width: 100%;
-//     height: 100%;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     background-color: #fff;
-//     -webkit-mask-image: url('../images/svg/icon'+$iconName+'.svg');
-//     mask-image: url('../images/svg/icon'+$iconName+'.svg');
-//     background: {
-//       image: url('../images/svg/icon-'+$iconName+'.svg');
-//       repeat: no-repeat;
-//       position: center 36%;
-//     }
-//   }
-// }
-@mixin image-hover-background($color, $opacity) {
-  &:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: $color;
-    z-index: 1;
-    opacity: $opacity;
+@mixin icons($map, $prefix: '--', $width: 1em, $height: 1em, $color: $white) {
+  @each $icon in $map {
+    &#{$prefix}#{$icon} {
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: $height;
+        width: $width;
+        top: calc(50% - (#{$height} / 2));
+        left: calc(50% - (#{$width} / 2));
+        background-color: $color;
+        z-index: 2;
+        -webkit-mask-image: url('../images/svg/icon-'+$icon+'.svg');
+        mask: {
+          image: url('../images/svg/icon-'+$icon+'.svg');
+          size: $width;
+          repeat: no-repeat;
+        }
+      }
+    }
   }
 }
-@mixin icon($iconName, $color, $width, $height) {
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: $width;
-    height: $height;
-    // height: calc(#{$a} + 7px);
-    top: calc(50% - (#{$height} / 2));
-    left: calc(50% - (#{$width} / 2));
-    background-color: $color;
-    -webkit-mask-image: url('../images/svg/icon-'+$iconName+'.svg');
-    mask: {
-      image: url('../images/svg/icon-'+$iconName+'.svg');
-      size: 2em;
-      repeat: no-repeat;
-    }
 
-    z-index: 2;
-  }
+// TODO pseudo elements mixin
+// >>> refactor image-hover-background mixin <<<
+@mixin image-hover-background($color, $opacity: 0) {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $color;
+  z-index: 1;
+  opacity: $opacity;
 }
