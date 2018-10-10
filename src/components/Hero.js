@@ -18,7 +18,7 @@ export default () => (
       }
     `}
     render={data => (
-      <section id="hero" className="hero">
+      <section id="hero" className="hero section">
         <h1 className="hero__heading text-uppercase text-center">
           Welcome to&nbsp;
           {data.site.siteMetadata.siteTitle}
@@ -26,7 +26,6 @@ export default () => (
         <p className="hero__content content">
           {data.site.siteMetadata.hero.content}
         </p>
-        <Button buttonText="read more" />
       </section>
     )}
   />
