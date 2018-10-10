@@ -2,7 +2,7 @@
 @import '../utils/mixins';
 .hero {
   height: 65vh;
-  max-height: 1200px;
+  max-height: 1100px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,11 +10,15 @@
   align-items: center;
   padding-top: 3em;
   color: #fff;
+  padding-bottom: 2em;
   z-index: 1;
   background: {
     image: url('../images/bg-home.png');
     position: 32% 0;
     size: cover;
+  }
+  @media (max-height: 400px) {
+    height: 100vh !important;
   }
   @include breakpoint('s') {
     height: 80vh;
@@ -22,9 +26,6 @@
   }
   @include breakpoint('m') {
     height: 100vh;
-  }
-  @include breakpoint('s') {
-    // height: 80vh;
   }
   &__heading {
     margin-bottom: 0.25em;
