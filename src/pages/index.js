@@ -3,7 +3,6 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-// import Hero from '../components/Hero'
 import Button from '../components/Button'
 import Services from '../components/Services'
 import Projects from '../components/Projects'
@@ -44,7 +43,12 @@ export default () => (
           <p className="hero__content content">
             {data.site.siteMetadata.hero.content}
           </p>
-          <Button buttonText="read more" color="white" centered={true} />
+          <Button
+            slug="services"
+            buttonText="read more"
+            color="white"
+            centered={true}
+          />
         </section>
         <section id="services" className="services section">
           <div className="container">
@@ -70,28 +74,32 @@ export default () => (
             Our projects
           </h2>
           <Projects />
-          <Button buttonText="browse more" color="purple" centered={true} />
+          <div>
+            <Button buttonText="browse more" color="purple" centered={true} />
+          </div>
         </section>
         <section id="testimonials" className="testimonials section">
           <h2 className="testimonials__heading section__heading text-uppercase text-center">
             Testmionials
           </h2>
-          <Carousel withoutControls={false} autoplay={true}>
-            {data.site.siteMetadata.testimonials.map((item, index) => {
-              return (
-                <div key={index} className={`testimonials__item`}>
-                  <img
-                    className="testimonials__img center"
-                    src="https://via.placeholder.com/120x70"
-                    alt=""
-                  />
-                  <p className={`testimonials__content content`}>
-                    {item.content}
-                  </p>
-                </div>
-              )
-            })}
-          </Carousel>
+          <div>
+            <Carousel withoutControls={false} autoplay={true}>
+              {data.site.siteMetadata.testimonials.map((item, index) => {
+                return (
+                  <div key={index} className={`testimonials__item`}>
+                    <img
+                      className="testimonials__img center"
+                      src="https://via.placeholder.com/120x70"
+                      alt=""
+                    />
+                    <p className={`testimonials__content content`}>
+                      {item.content}
+                    </p>
+                  </div>
+                )
+              })}
+            </Carousel>
+          </div>
         </section>
         {/* <Services /> */}
         {/* <Projects /> */}
