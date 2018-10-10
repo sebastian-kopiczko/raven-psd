@@ -24,7 +24,7 @@ export default ({ data }) => (
         {data.allFile.edges.map((img, index) => {
           return (
             <Img
-              className="projects__image"
+              className="projects__image icon--search"
               key={index}
               resolutions={img.node.childImageSharp.fluid}
             />
