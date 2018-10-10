@@ -71,6 +71,15 @@ h1 {
     font-size: 3.5rem;
   }
 }
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  @include breakpoint('m') {
+    font-size: 1.8rem;
+  }
+}
 
 .section {
   padding: 1em 1.3em 1.5em;
@@ -84,10 +93,10 @@ h1 {
     padding: 2.5em 3em;
   }
   @include breakpoint('l') {
-    padding: 4em 3.2em;
+    padding: 3em 3.2em;
   }
   @include breakpoint('xl') {
-    padding: 4.3em 3.2em;
+    padding: 3.5em 3.2em;
   }
   &__heading {
     position: relative;
@@ -122,50 +131,11 @@ h1 {
   border: 1px solid $grey-light;
   background-color: #fff;
 }
+
 .icon {
-  &--pulse {
-    @include icon('pulse', $purple-dark, 2em, 2em);
-  }
-  &--compass {
-    @include icon('compass', $purple-dark, 2em, 2.5em);
-    &:after {
-      -webkit-mask-size: 60%;
-      mask-size: 60%;
-    }
-    // @include breakpoint('xs') {
-    //   &:after {
-    //     background-size: 21%;
-    //   }
-    // }
-  }
-  &--shield {
-    @include icon('shield', $purple-dark, 2em, 2.5em);
-  }
-  &--truck {
-    @include icon('truck', $purple-dark, 2em, 2em);
-  }
-  &--vehicle {
-    @include icon('vehicle', $purple-dark, 2em, 2em);
-  }
-  &--box {
-    @include icon('box', $purple-dark, 2em, 2em);
-  }
-  &--cd {
-    @include icon('cd', $purple-dark, 2em, 2em);
-  }
-  &--syringe {
-    @include icon('syringe', $purple-dark, 2em, 2em);
-  }
-  &--facebook {
-    @include icon('facebook', $purple-dark, 2em, 2em);
-  }
-  &--twitter {
-    @include icon('twitter', $purple-dark, 2em, 2em);
-  }
-  &--google {
-    @include icon('google', $purple-dark, 2em, 2em);
-  }
-  &--youtube {
-    @include icon('youtube', $purple-dark, 2em, 2em);
+  @include icons($icons-purple, $color: $purple-dark);
+  @include icons($icons-white, $color: $white);
+  @include breakpoint('m') {
+    // @include icons($icons, $width: 1.2em, $height: 1.2em);
   }
 }
