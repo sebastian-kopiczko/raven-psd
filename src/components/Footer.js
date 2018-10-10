@@ -30,16 +30,13 @@ export default () => (
                 return (
                   <li
                     key={index}
-                    className={`footer__navigation-item icon--${li.icon}`}
+                    className={`footer__navigation__item icon--${li.icon}`}
                   >
-                    {index}
-                    <Link to={li.url} className="footer__navigation-link" />
+                    &nbsp;
+                    <Link to={li.url} className="footer__navigation__link" />
                   </li>
                 )
               })}
-              <li className="navigation__item scroll-up">
-                <i className="fa fa-arrow-up" />
-              </li>
             </ul>
           </div>
         </div>
