@@ -16,21 +16,22 @@ $breakpoints: (
   'xl': 1680px,
 );
 
-$icons: (
+$icons-white: (
+  'search',
   'arrow-up',
-  'back',
+  'facebook',
+  'google',
+  'twitter',
+  'youtube'
+);
+
+$icons-purple: (
   'box',
   'cd',
   'compass',
-  'facebook',
-  'google',
-  'next',
   'pulse',
-  'search',
   'shield',
   'syringe',
   'truck',
-  'twitter',
-  'vehicle',
-  'youtube'
+  'vehicle'
 );
