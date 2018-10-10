@@ -1,12 +1,13 @@
 import React from 'react'
 
 export default props => (
-  <button
+  <a
+    href={`#${props.slug}`}
     className={`button button--${props.color} ${
       props.centered ? 'center' : ''
     }`}
   >
     {props.buttonText}
-  </button>
+  </a>
 )
 // ${this.props.showBulkActions ? 'shown' : 'hidden'}
